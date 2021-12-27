@@ -16,13 +16,11 @@ async def start(event):
 async def menu(event):
     await event.edit("**📑MENU.**",
                     buttons=[[
-                         Button.inline("info.", data="info"),
+                         Button.inline("Bot info", data="info"),
                          Button.inline("NOTICE", data="notice")],
                          [
-                         Button.inline("SOURCE", data="source"),
-                         Button.inline("Help.", data="help")],
-                         [
-                         Button.url("DEVELOPER", url=f"{DEV}")]])
+                         Button.inline("DEVELOPER", url=f"{DEV}"),
+                         Button.inline("Help", data="help")]])
     
 @Drone.on(events.callbackquery.CallbackQuery(data="info"))
 async def info(event):
@@ -34,19 +32,12 @@ async def info(event):
 async def notice(event):
     await event.answer(f'{spam_notice}', alert=True)
     
-@Drone.on(events.callbackquery.CallbackQuery(data="source"))
-async def source(event):
-    await Drone.send_message(event.chat_id, source_text,
-                    buttons=[[
-                         Button.url("GITHUB.", url="https://github.com/Vasusen-code/VideoConvertor/tree/public")]])
-
-    
 @Drone.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
     await event.edit('**👥HELP.**',
                     buttons=[[
-                         Button.inline("PLUGINS.", data="plugins"),
-                         Button.url("SUPPORT.", url=f"{SUPPORT_LINK}")],
+                         Button.inline("Features", data="plugins"),
+                         Button.url("SUPPORT", url=f"{SUPPORT_LINK}")],
                          [
                          Button.inline("Menu.", data="menu")]])
     
@@ -54,7 +45,7 @@ async def help(event):
 async def plugins(event):
     await event.edit(f'{help_text}',
                     buttons=[[
-                         Button.inline("Menu.", data="menu")]])
+                         Button.inline("Menu", data="menu")]])
     
     
     
