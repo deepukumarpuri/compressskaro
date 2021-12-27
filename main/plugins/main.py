@@ -19,9 +19,7 @@ async def compin(event):
                 await event.reply("📽",
                             buttons=[
                                 [Button.inline("COMPRESS", data="compress"),
-                                 Button.inline("CONVERT", data="convert")],
-                                [Button.inline("RENAME", data="rename"),
-                                 Button.inline("TRIM", data="trim")]
+                                 Button.inline("Trim", data="trim")]
                             ])
                 
             else:
@@ -48,9 +46,7 @@ async def back(event):
     await event.edit("📽",
                     buttons=[
                         [Button.inline("COMPRESS", data="compress"),
-                         Button.inline("CONVERT", data="convert")],
-                        [Button.inline("RENAME", data="rename"),
-                         Button.inline("TRIM", data="trim")]])
+                         Button.inline("CONVERT", data="convert")]])
                             
 #-----------------------------------------------------------------------------------------
 
